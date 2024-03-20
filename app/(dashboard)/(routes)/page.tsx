@@ -1,7 +1,10 @@
+import { UserButton } from "@clerk/nextjs"
 
 const HomePage = () => {
   return (
-    <div>this is a protected page</div>
+    <div className="mt-20">
+      Overview
+    </div>
   )
 }
 
