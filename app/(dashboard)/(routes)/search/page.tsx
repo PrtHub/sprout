@@ -2,7 +2,7 @@
 
 const SearchPage = () => {
   return (
-    <div className="mt-20">SearchPage</div>
+    <div className="">SearchPage</div>
   )
 }
 

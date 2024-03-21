@@ -2,7 +2,7 @@
 
 const Progress = () => {
   return (
-    <div className="mt-20">My Progress</div>
+    <div className="">My Progress</div>
   )
 }
 
