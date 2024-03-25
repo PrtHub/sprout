@@ -1,8 +1,13 @@
-import { ClerkProvider } from "@clerk/nextjs";
-
+import "./globals.css";
+import "@uploadthing/react/styles.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
+
+import { extractRouterConfig } from "uploadthing/server";
+import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
+import { ourFileRouter } from "@/app/api/uploadthing/core";
+
 import { ToastProvider } from "@/components/providers/toast-provider";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -21,6 +26,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={inter.className}>
+          <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
           <ToastProvider />
           {children}
         </body>
